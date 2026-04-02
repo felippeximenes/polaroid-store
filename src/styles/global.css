@@ -1,0 +1,101 @@
+/*
+ * global.css
+ * ─────────────────────────────────────────────────────────
+ * Contém:
+ *  1. Import de fontes (Google Fonts)
+ *  2. CSS Reset básico
+ *  3. Variáveis de design (tokens)
+ *  4. Keyframes de animação reutilizáveis
+ * ─────────────────────────────────────────────────────────
+ */
+
+/* ── 1. FONTES ───────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Nunito:wght@400;600;700&display=swap');
+
+/* ── 2. RESET ────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: #f0f0f0;
+  overflow-x: hidden;
+}
+
+/* ── 3. VARIÁVEIS DE DESIGN ──────────────────────────────── */
+:root {
+  /* Cores principais */
+  --yellow:      #FFD700;
+  --yellow-dark: #F5C200;
+  --blue:        #29B6D8;
+  --blue-dark:   #1a9abf;
+  --coral:       #FF6B6B;
+  --pink:        #F8A4C8;
+  --lavender:    #C5B8E8;
+  --mint:        #A8D8D8;
+  --white:       #FFFFFF;
+  --dark:        #1a1a2e;
+  --gray:        #888888;
+  --light-gray:  #f5f5f5;
+
+  /* Tipografia */
+  --font-display: 'Montserrat', sans-serif;
+  --font-body:    'Nunito', sans-serif;
+
+  /* Espaçamento de seção */
+  --section-padding: 60px 40px;
+
+  /* Border radius padrão */
+  --radius-card:   20px;
+  --radius-pill:   30px;
+  --radius-circle: 50%;
+
+  /* Sombras */
+  --shadow-card:    0 8px 30px rgba(0, 0, 0, 0.08);
+  --shadow-hover:   0 20px 50px rgba(0, 0, 0, 0.15);
+  --shadow-yellow:  0 4px 20px rgba(255, 215, 0, 0.4);
+  --shadow-blue:    0 4px 20px rgba(41, 182, 216, 0.3);
+}
+
+/* ── 4. ANIMAÇÕES GLOBAIS ────────────────────────────────── */
+
+/* Entrada suave vindo de baixo */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Entrada vindo da esquerda */
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Entrada vindo da direita */
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Flutuação — usada nos produtos em destaque */
+@keyframes float {
+  0%, 100% { transform: translateY(0px)   rotate(0deg); }
+  50%       { transform: translateY(-15px) rotate(2deg); }
+}
+
+/* Pulsação suave — badges e CTAs */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.05); }
+}
+
+/* Rotação contínua */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
