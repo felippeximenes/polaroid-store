@@ -1,0 +1,139 @@
+/*
+ * Footer.css
+ * Estilos do rodapé (fundo escuro com 4 colunas)
+ */
+
+/* ── Container ───────────────────────────────────────── */
+.footer {
+  background: var(--dark);
+  color: white;
+  padding: 50px 40px 20px;
+}
+
+/* ── Grid de 4 colunas ───────────────────────────────── */
+.footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+/* ── Coluna de branding (col 1) ──────────────────────── */
+.footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 20px;
+  margin-bottom: 14px;
+  color: white;
+}
+
+.footer__logo-icon {
+  width: 26px;
+  height: 26px;
+  background: var(--yellow);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dark);
+  font-size: 13px;
+}
+
+.footer__desc {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  max-width: 260px;
+}
+
+/* Botões de redes sociais */
+.footer__socials {
+  display: flex;
+  gap: 10px;
+}
+
+.footer__social-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.footer__social-btn:hover {
+  background: var(--yellow);
+  color: var(--dark);
+  transform: translateY(-2px);
+}
+
+/* ── Colunas de links (col 2, 3, 4) ──────────────────── */
+.footer__col-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 14px;
+  margin-bottom: 18px;
+  color: white;
+}
+
+.footer__col-links {
+  list-style: none;
+}
+
+.footer__col-links li {
+  margin-bottom: 10px;
+}
+
+.footer__col-links li a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.2s;
+}
+
+.footer__col-links li a:hover {
+  color: var(--yellow);
+}
+
+/* ── Barra inferior ──────────────────────────────────── */
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ── Responsivo ──────────────────────────────────────── */
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 20px 20px;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer__brand {
+    grid-column: span 2;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
