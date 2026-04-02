@@ -1,0 +1,33 @@
+/*
+ * Topbar.css
+ * Estilos da barra superior informativa
+ */
+
+.topbar {
+  background: #333;
+  color: white;
+  font-size: 11px;
+  padding: 5px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-display);
+}
+
+/* Grupo de links */
+.topbar__group {
+  display: flex;
+  gap: 4px;
+}
+
+.topbar__group a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 0 8px;
+  font-size: 11px;
+  transition: color 0.2s;
+}
+
+.topbar__group a:hover {
+  color: var(--yellow);
+}
