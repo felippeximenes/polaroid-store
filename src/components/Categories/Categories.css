@@ -1,0 +1,200 @@
+/*
+ * Categories.css
+ * Estilos da seção de categorias
+ */
+
+/* ── Container da seção ──────────────────────────────── */
+.categories {
+  background: white;
+  padding: var(--section-padding);
+}
+
+/* ── Cabeçalho ───────────────────────────────────────── */
+.categories__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 36px;
+}
+
+/* Labels e títulos reutilizáveis (usados em múltiplas seções) */
+.section-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(24px, 3vw, 34px);
+  color: var(--dark);
+  line-height: 1.2;
+}
+
+/* Botão outline reutilizável */
+.btn-outline {
+  background: none;
+  border: 2px solid var(--blue);
+  color: var(--blue);
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-outline:hover {
+  background: var(--blue);
+  color: white;
+}
+
+/* ── Grid ────────────────────────────────────────────── */
+.categories__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.categories__col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Card padrão ─────────────────────────────────────── */
+.cat-card {
+  border-radius: var(--radius-card);
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Variantes de cor de fundo */
+.cat-card.pink-bg    { background: linear-gradient(135deg, #FFE5F0, #FFD0E8); }
+.cat-card.blue-bg    { background: linear-gradient(135deg, #E0F5FF, #C8EEFF); }
+
+.cat-card__icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 38px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.cat-card__name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 17px;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+
+.cat-card__count {
+  color: var(--gray);
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+/* ── Badges ──────────────────────────────────────────── */
+.cat-card__badge {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.cat-card__badge--yellow { background: var(--yellow); color: var(--dark); }
+.cat-card__badge--blue   { background: var(--blue);   color: white; }
+
+/* ── Card destaque (featured) ────────────────────────── */
+.cat-card--featured {
+  background: linear-gradient(135deg, #DDF0FF, #BDE5FF);
+  border-radius: var(--radius-card);
+  padding: 28px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 260px;
+}
+
+.cat-card--featured:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.cat-card__featured-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--yellow);
+  color: var(--dark);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 15px;
+  animation: pulse 2s infinite;
+}
+
+.cat-card__featured-label {
+  font-size: 11px;
+  color: #888;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.cat-card__featured-sub {
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.cat-card__featured-emojis {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.cat-card__featured-tags {
+  display: flex;
+  gap: 10px;
+}
+
+/* ── Responsivo ──────────────────────────────────────── */
+@media (max-width: 768px) {
+  .categories__grid {
+    grid-template-columns: 1fr;
+  }
+}
