@@ -1,0 +1,133 @@
+/*
+ * CTA.css
+ * Estilos da seção de chamada para ação (fundo escuro)
+ */
+
+/* ── Container ───────────────────────────────────────── */
+.cta {
+  background: linear-gradient(135deg, var(--dark) 0%, #2d2d50 100%);
+  padding: 80px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 60px;
+}
+
+/* Brilho decorativo azul (canto superior esquerdo) */
+.cta::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(41, 182, 216, 0.15), transparent);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Brilho decorativo amarelo (canto inferior direito) */
+.cta::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  right: -80px;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.1), transparent);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ── Textos ──────────────────────────────────────────── */
+.cta__label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.cta__title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(28px, 4vw, 46px);
+  color: white;
+  margin-bottom: 14px;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+}
+
+.cta__title--accent {
+  color: var(--yellow);
+}
+
+.cta__desc {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 15px;
+  max-width: 480px;
+  margin: 0 auto 36px;
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Botões ──────────────────────────────────────────── */
+.cta__buttons {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.cta__btn {
+  padding: 16px 36px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+}
+
+/* Botão primário (amarelo) */
+.cta__btn--primary {
+  background: var(--yellow);
+  color: var(--dark);
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
+}
+
+.cta__btn--primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4);
+}
+
+/* Botão ghost (outline branco) */
+.cta__btn--ghost {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.cta__btn--ghost:hover {
+  border-color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ── Responsivo ──────────────────────────────────────── */
+@media (max-width: 768px) {
+  .cta {
+    padding: 50px 20px;
+    margin-top: 40px;
+  }
+}
