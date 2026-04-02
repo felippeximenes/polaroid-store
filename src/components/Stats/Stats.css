@@ -1,0 +1,129 @@
+/*
+ * Stats.css
+ * Estilos da barra de estatísticas (3 colunas)
+ */
+
+/* ── Container ───────────────────────────────────────── */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: white;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  margin: 0 40px;
+}
+
+/* ── Item individual ─────────────────────────────────── */
+.stats__item {
+  padding: 36px 28px;
+  text-align: center;
+  transition: background 0.2s;
+}
+
+.stats__item:hover {
+  background: #fafafa;
+}
+
+/* Divisor entre colunas */
+.stats__item--border {
+  border-right: 1px solid #f0f0f0;
+}
+
+/* ── Número em destaque ──────────────────────────────── */
+.stats__number {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 38px;
+  color: var(--dark);
+  margin-bottom: 6px;
+}
+
+.stats__unit {
+  font-size: 28px;
+  color: var(--blue);
+}
+
+.stats__unit--yellow {
+  color: var(--yellow);
+}
+
+/* ── Textos ──────────────────────────────────────────── */
+.stats__label {
+  color: var(--gray);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  font-family: var(--font-display);
+}
+
+.stats__desc {
+  color: #bbb;
+  font-size: 12px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+/* ── Extras ──────────────────────────────────────────── */
+
+/* Dots coloridos (cashback) */
+.stats__dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.stats__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.stats__dot--blue   { background: var(--blue); }
+.stats__dot--yellow { background: var(--yellow); }
+.stats__dot--coral  { background: var(--coral); }
+
+.stats__dot-label {
+  font-size: 11px;
+  color: #ccc;
+}
+
+/* Sub-texto de rating */
+.stats__rating-sub {
+  font-size: 11px;
+  color: #ccc;
+  display: block;
+  margin-top: 10px;
+}
+
+/* Badge de entrega */
+.stats__delivery-badge {
+  display: inline-block;
+  background: #e8fff8;
+  color: #0aa;
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  margin-bottom: 12px;
+}
+
+/* ── Responsivo ──────────────────────────────────────── */
+@media (max-width: 768px) {
+  .stats {
+    grid-template-columns: 1fr;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .stats__item--border {
+    border-right: none;
+    border-bottom: 1px solid #f0f0f0;
+  }
+}
