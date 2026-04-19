@@ -1,6 +1,6 @@
 # 📷 Polaroid Store — UI Study Project
 
-> A study project: rebuilding an electronics e-commerce landing page in React, based on an existing design reference.
+> A study project: rebuilding an electronics e-commerce landing page in React, based on an existing design reference!
 
 ---
 
